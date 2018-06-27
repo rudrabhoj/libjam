@@ -1,0 +1,22 @@
+body {
+  background: white;
+  margin: 0;
+  background-size: cover;
+  background-color: black;
+}
+
+#game_div {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fontLoader {
+  position: fixed;
+  opacity: 0;
+  font-family: "Digitalt";
+  left: -500;
+}
