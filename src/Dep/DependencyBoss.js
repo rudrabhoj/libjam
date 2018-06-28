@@ -1,5 +1,8 @@
 import SmartDepend from '../Dep/SmartDepend.js';
 
+//Control
+import Game from '../Control/Game.js';
+
 import BotA from '../Resource/BotA.js';
 import BotB from '../Resource/BotB.js';
 
@@ -26,6 +29,10 @@ class DependencyBoss {
 
   _setupTypes() {
     this._types = {
+      //Control
+      Game             : {name: "Game",               class: Game,         single: false},
+
+      //Resource
       BotA             : {name: "BotA",               class: BotA,         single: false},
       BotB             : {name: "BotB",               class: BotB,         single: false}
     }
@@ -47,7 +54,7 @@ class DependencyBoss {
   }
 
   _generateObjects() {
-    this._mainObj  = this._container.get(this._types.BotA.name);
+    this._mainObj  = this._container.get(this._types.Game.name);
   }
 
   //Foreign dependencies

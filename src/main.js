@@ -1,8 +1,8 @@
 import DependencyBoss from './Dep/DependencyBoss.js';
 const dependencyBoss = new DependencyBoss();
 
-let controlData    = dependencyBoss.getMainObj();
+let mainData    = dependencyBoss.getMainObj();
 
-controlData.say();
+window.libjam = mainData;
 
 console.log("welcome to libjam 0.0.1");
