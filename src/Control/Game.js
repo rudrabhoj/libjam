@@ -1,6 +1,10 @@
 class Game {
-  constructor() {
-    console.log("Game Allocated");
+  constructor(loader) {
+    this._loader = loader;
+  }
+
+  get loader() {
+    return this._loader;
   }
 }
 

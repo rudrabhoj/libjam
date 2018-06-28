@@ -3,8 +3,14 @@ import SmartDepend from '../Dep/SmartDepend.js';
 //Control
 import Game from '../Control/Game.js';
 
-import BotA from '../Resource/BotA.js';
-import BotB from '../Resource/BotB.js';
+//Resource
+  //Resource
+  import BotA from '../Resource/BotA.js';
+  import BotB from '../Resource/BotB.js';
+
+  //Loader
+  import Loader from '../Resource/Loader/Loader.js';
+
 
 class DependencyBoss {
   constructor() {
@@ -30,11 +36,15 @@ class DependencyBoss {
   _setupTypes() {
     this._types = {
       //Control
-      Game             : {name: "Game",               class: Game,         single: false},
+        //Control
+        Game             : {name: "Game",               class: Game,         single: false},
 
       //Resource
-      BotA             : {name: "BotA",               class: BotA,         single: false},
-      BotB             : {name: "BotB",               class: BotB,         single: false}
+        //Resource
+        BotA             : {name: "BotA",               class: BotA,         single: false},
+        BotB             : {name: "BotB",               class: BotB,         single: false},
+        //Loader
+        Loader           : {name: "Loader",             class: Loader,       single: false}
     }
 
     this._addObjects();
@@ -50,7 +60,13 @@ class DependencyBoss {
   }
 
   _injectDependencies() {
-    this._addDependency(this._types.BotA.name,  this._types.BotB.name);
+    //Control
+      //Control
+      this._addDependency(this._types.Game.name,  this._types.Loader.name);
+
+    //Resource
+      //Resource
+      this._addDependency(this._types.BotA.name,  this._types.BotB.name);
   }
 
   _generateObjects() {
